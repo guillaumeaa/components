@@ -1,0 +1,55 @@
+main-product.liquid
+
+
+          {%- when 'custom_button' -%}
+            <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
+              {{ block.settings.button_label | escape }}
+            </a>           
+
+
+
+
+{
+      "type": "custom_button",
+      "name": "t:sections.main-product.blocks.custom_button.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.main-product.blocks.custom_button.settings.button_label.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.main-product.blocks.custom_button.settings.button_link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.main-product.blocks.custom_button.settings.button_style_secondary.label"
+        }
+      ]
+    },
+    
+    "custom_button":{
+          "name": "Bouton",
+          "settings": {
+            "button_label": {
+              "label": "Texte du bouton"
+            },
+            "button_link": {
+              "label": "Lien du bouton"
+            },
+            "button_style_secondary": {
+              "label": "Utiliser le style du bouton en relief"
+            }
+          }
+        },
+    
+    
+    
+    
+    
